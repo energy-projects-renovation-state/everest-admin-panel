@@ -9,7 +9,7 @@ var __publicField = (obj, key, value) => {
   return value;
 };
 var require_index_001 = __commonJS({
-  "assets/index-_hPXPmLr.js"(exports, module) {
+  "assets/index-ohomoIi1.js"(exports, module) {
     var _a;
     (function polyfill() {
       const relList = document.createElement("link").relList;
@@ -8038,13 +8038,18 @@ var require_index_001 = __commonJS({
     }
     const App = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$7]]);
     /*!
-      * vue-router v4.4.3
+      * vue-router v4.4.4
       * (c) 2024 Eduardo San Martin Morote
       * @license MIT
       */
     const isBrowser = typeof document !== "undefined";
+    function isRouteComponent(component) {
+      return typeof component === "object" || "displayName" in component || "props" in component || "__vccOpts" in component;
+    }
     function isESModule(obj) {
-      return obj.__esModule || obj[Symbol.toStringTag] === "Module";
+      return obj.__esModule || obj[Symbol.toStringTag] === "Module" || // support CF with dynamic imports that do not
+      // add the Module string tag
+      obj.default && isRouteComponent(obj.default);
     }
     const assign$3 = Object.assign;
     function applyToParams(fn, params) {
@@ -8966,6 +8971,7 @@ var require_index_001 = __commonJS({
         leaveGuards: /* @__PURE__ */ new Set(),
         updateGuards: /* @__PURE__ */ new Set(),
         enterCallbacks: {},
+        mods: {},
         components: "components" in record ? record.components || null : record.component && { default: record.component }
       };
     }
@@ -9154,8 +9160,9 @@ var require_index_001 = __commonJS({
             let componentPromise = rawComponent();
             guards.push(() => componentPromise.then((resolved) => {
               if (!resolved)
-                return Promise.reject(new Error(`Couldn't resolve component "${name}" at "${record.path}"`));
+                throw new Error(`Couldn't resolve component "${name}" at "${record.path}"`);
               const resolvedComponent = isESModule(resolved) ? resolved.default : resolved;
+              record.mods[name] = resolved;
               record.components[name] = resolvedComponent;
               const options = resolvedComponent.__vccOpts || resolvedComponent;
               const guard = options[guardType];
@@ -9165,9 +9172,6 @@ var require_index_001 = __commonJS({
         }
       }
       return guards;
-    }
-    function isRouteComponent(component) {
-      return typeof component === "object" || "displayName" in component || "props" in component || "__vccOpts" in component;
     }
     function useLink$1(props) {
       const router2 = inject$1(routerKey);
