@@ -9,7 +9,7 @@ var __publicField = (obj, key, value) => {
   return value;
 };
 var require_index_001 = __commonJS({
-  "assets/index-ohomoIi1.js"(exports, module) {
+  "assets/index--Iq4orsK.js"(exports, module) {
     var _a;
     (function polyfill() {
       const relList = document.createElement("link").relList;
@@ -8038,7 +8038,7 @@ var require_index_001 = __commonJS({
     }
     const App = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$7]]);
     /*!
-      * vue-router v4.4.4
+      * vue-router v4.4.5
       * (c) 2024 Eduardo San Martin Morote
       * @license MIT
       */
@@ -8797,22 +8797,24 @@ var require_index_001 = __commonJS({
         const mainNormalizedRecord = normalizeRouteRecord(record);
         mainNormalizedRecord.aliasOf = originalRecord && originalRecord.record;
         const options = mergeOptions(globalOptions, record);
-        const normalizedRecords = [
-          mainNormalizedRecord
-        ];
+        const normalizedRecords = [mainNormalizedRecord];
         if ("alias" in record) {
           const aliases2 = typeof record.alias === "string" ? [record.alias] : record.alias;
           for (const alias of aliases2) {
-            normalizedRecords.push(assign$3({}, mainNormalizedRecord, {
-              // this allows us to hold a copy of the `components` option
-              // so that async components cache is hold on the original record
-              components: originalRecord ? originalRecord.record.components : mainNormalizedRecord.components,
-              path: alias,
-              // we might be the child of an alias
-              aliasOf: originalRecord ? originalRecord.record : mainNormalizedRecord
-              // the aliases are always of the same kind as the original since they
-              // are defined on the same record
-            }));
+            normalizedRecords.push(
+              // we need to normalize again to ensure the `mods` property
+              // being non enumerable
+              normalizeRouteRecord(assign$3({}, mainNormalizedRecord, {
+                // this allows us to hold a copy of the `components` option
+                // so that async components cache is hold on the original record
+                components: originalRecord ? originalRecord.record.components : mainNormalizedRecord.components,
+                path: alias,
+                // we might be the child of an alias
+                aliasOf: originalRecord ? originalRecord.record : mainNormalizedRecord
+                // the aliases are always of the same kind as the original since they
+                // are defined on the same record
+              }))
+            );
           }
         }
         let matcher;
@@ -8958,12 +8960,12 @@ var require_index_001 = __commonJS({
       return newParams;
     }
     function normalizeRouteRecord(record) {
-      return {
+      const normalized = {
         path: record.path,
         redirect: record.redirect,
         name: record.name,
         meta: record.meta || {},
-        aliasOf: void 0,
+        aliasOf: record.aliasOf,
         beforeEnter: record.beforeEnter,
         props: normalizeRecordProps(record),
         children: record.children || [],
@@ -8971,9 +8973,14 @@ var require_index_001 = __commonJS({
         leaveGuards: /* @__PURE__ */ new Set(),
         updateGuards: /* @__PURE__ */ new Set(),
         enterCallbacks: {},
-        mods: {},
+        // must be declared afterwards
+        // mods: {},
         components: "components" in record ? record.components || null : record.component && { default: record.component }
       };
+      Object.defineProperty(normalized, "mods", {
+        value: {}
+      });
+      return normalized;
     }
     function normalizeRecordProps(record) {
       const propsObject = {};
