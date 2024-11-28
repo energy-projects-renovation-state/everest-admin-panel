@@ -122,7 +122,7 @@ importers:
         version: 13.0.0(eslint-plugin-vue@9.25.0(eslint@8.57.0))(eslint@8.57.0)(typescript@5.3.3)
       cypress:
         specifier: ^13.15.0
-        version: 13.15.2
+        version: 13.16.0
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -1646,8 +1646,8 @@ packages:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
 
-  cross-spawn@7.0.5:
-    resolution: {integrity: sha512-ZVJrKKYunU38/76t0RMOulHOnUcbU9GbpWKAOZ0mhjr7CX6FVrH+4FrAapSOekrgFQ3f/8gwMEuIft0aKq6Hug==}
+  cross-spawn@7.0.6:
+    resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
 
   crypto-random-string@2.0.0:
@@ -1662,8 +1662,8 @@ packages:
   csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
 
-  cypress@13.15.2:
-    resolution: {integrity: sha512-ARbnUorjcCM3XiPwgHKuqsyr5W9Qn+pIIBPaoilnoBkLdSC2oLQjV1BUpnmc7KR+b7Avah3Ly2RMFnfxr96E/A==}
+  cypress@13.16.0:
+    resolution: {integrity: sha512-g6XcwqnvzXrqiBQR/5gN+QsyRmKRhls1y5E42fyOvsmU7JuY+wM6uHJWj4ZPttjabzbnRvxcik2WemR8+xT6FA==}
     engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
     hasBin: true
 
@@ -3047,11 +3047,11 @@ packages:
     resolution: {integrity: sha512-n1cw8k1k0x4pgA2+9XrOkFydTerNcJ1zWCO5Nn9scWHTD+5tp8dghT2x1uduQePZTZgd3Tupf+x9BxJjeJi77Q==}
     engines: {node: '>=14.0.0'}
 
-  tldts-core@6.1.61:
-    resolution: {integrity: sha512-In7VffkDWUPgwa+c9picLUxvb0RltVwTkSgMNFgvlGSWveCzGBemBqTsgJCL4EDFWZ6WH0fKTsot6yNhzy3ZzQ==}
+  tldts-core@6.1.62:
+    resolution: {integrity: sha512-ohONqbfobpuaylhqFbtCzc0dFFeNz85FVKSesgT8DS9OV3a25Yj730pTj7/dDtCqmgoCgEj6gDiU9XxgHKQlBw==}
 
-  tldts@6.1.61:
-    resolution: {integrity: sha512-rv8LUyez4Ygkopqn+M6OLItAOT9FF3REpPQDkdMx5ix8w4qkuE7Vo2o/vw1nxKQYmJDV8JpAMJQr1b+lTKf0FA==}
+  tldts@6.1.62:
+    resolution: {integrity: sha512-TF+wo3MgTLbf37keEwQD0IxvOZO8UZxnpPJDg5iFGAASGxYzbX/Q0y944ATEjrfxG/pF1TWRHCPbFp49Mz1Y1w==}
     hasBin: true
 
   tmp@0.2.3:
@@ -5156,7 +5156,7 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
-  cross-spawn@7.0.5:
+  cross-spawn@7.0.6:
     dependencies:
       path-key: 3.1.1
       shebang-command: 2.0.0
@@ -5168,7 +5168,7 @@ snapshots:
 
   csstype@3.1.3: {}
 
-  cypress@13.15.2:
+  cypress@13.16.0:
     dependencies:
       '@cypress/request': 3.0.6
       '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
@@ -5520,7 +5520,7 @@ snapshots:
 
   execa@4.1.0:
     dependencies:
-      cross-spawn: 7.0.5
+      cross-spawn: 7.0.6
       get-stream: 5.2.0
       human-signals: 1.1.1
       is-stream: 2.0.1
@@ -5615,7 +5615,7 @@ snapshots:
 
   foreground-child@3.3.0:
     dependencies:
-      cross-spawn: 7.0.5
+      cross-spawn: 7.0.6
       signal-exit: 4.1.0
 
   forever-agent@0.6.1: {}
@@ -6678,11 +6678,11 @@ snapshots:
 
   tinyspy@3.0.2: {}
 
-  tldts-core@6.1.61: {}
+  tldts-core@6.1.62: {}
 
-  tldts@6.1.61:
+  tldts@6.1.62:
     dependencies:
-      tldts-core: 6.1.61
+      tldts-core: 6.1.62
 
   tmp@0.2.3: {}
 
@@ -6694,7 +6694,7 @@ snapshots:
 
   tough-cookie@5.0.0:
     dependencies:
-      tldts: 6.1.61
+      tldts: 6.1.62
 
   tr46@1.0.1:
     dependencies:
