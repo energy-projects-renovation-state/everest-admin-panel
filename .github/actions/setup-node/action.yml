@@ -27,7 +27,7 @@ runs:
       run: echo version=$(cat .nvmrc) >> "$GITHUB_OUTPUT"
 
     - name: Setup Node.js ${{ steps.nvmrc.outputs.version }}
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v5
       with:
         node-version: ${{ steps.nvmrc.outputs.version }}
         cache: 'pnpm'
