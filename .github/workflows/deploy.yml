@@ -21,7 +21,7 @@ jobs:
     env:
       SUBDIR: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || (startsWith(github.ref, 'refs/tags/v') && 'stable' || 'main') }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Setup node + pnpm install
         uses: ./.github/actions/setup-node
         with:
