@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/everest-admin-panel/pr-141/sw.js', { scope: '/everest-admin-panel/pr-141/' })})}
