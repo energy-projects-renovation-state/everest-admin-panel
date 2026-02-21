@@ -17,7 +17,7 @@ jobs:
       matrix:
         browser: ['electron', 'firefox']
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Setup node + pnpm install
         uses: ./.github/actions/setup-node
         with:
