@@ -23,7 +23,7 @@ jobs:
         with:
           pnpm-version: 9
       - name: Run Cypress Tests
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7.4.3
         with:
           start: pnpm dlx http-server dist -p 4173
           build: pnpm build
