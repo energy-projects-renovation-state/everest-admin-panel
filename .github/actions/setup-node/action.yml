@@ -17,7 +17,7 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - uses: pnpm/action-setup@v4
+    - uses: pnpm/action-setup@v6
       with:
         version: ${{ inputs.pnpm-version }}
 
