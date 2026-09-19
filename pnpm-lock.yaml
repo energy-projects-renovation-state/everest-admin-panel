@@ -63,8 +63,8 @@ importers:
         specifier: 3.0.4
         version: 3.0.4(typescript@5.5.4)(vue@3.5.18(typescript@5.5.4))
       splitpanes:
-        specifier: 4.0.4
-        version: 4.0.4(vue@3.5.18(typescript@5.5.4))
+        specifier: 4.1.2
+        version: 4.1.2(vue@3.5.18(typescript@5.5.4))
       vee-validate:
         specifier: 4.15.1
         version: 4.15.1(vue@3.5.18(typescript@5.5.4))
@@ -3199,8 +3199,8 @@ packages:
     resolution: {integrity: sha512-1POYv7uv2gXoyGFpBCmpDVSNV74IfsWlDW216UPjbWufNf+bSU6GdbDsxdcxtfwb4xlI3yxzOTKClUosxARYrQ==}
     engines: {node: '>=0.10.0'}
 
-  splitpanes@4.0.4:
-    resolution: {integrity: sha512-RbysugZhjbCw5fgplvk3hOXr41stahQDtZhHVkhnnJI6H4wlGDhM2kIpbehy7v92duy9GnMa8zIhHigIV1TWtg==}
+  splitpanes@4.1.2:
+    resolution: {integrity: sha512-frNchoCv7w0nMQEuaDGgMGMU6jv3NhN6bBGQVfCNgwJdVcYaRmi1dwYDjp7SifAoUFdiQjBRB254LJNidzo15Q==}
     peerDependencies:
       vue: ^3.2.0
 
@@ -7077,7 +7077,7 @@ snapshots:
 
   speakingurl@14.0.1: {}
 
-  splitpanes@4.0.4(vue@3.5.18(typescript@5.5.4)):
+  splitpanes@4.1.2(vue@3.5.18(typescript@5.5.4)):
     dependencies:
       vue: 3.5.18(typescript@5.5.4)
 
